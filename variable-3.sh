@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #declaring the variable
-PERSON1==$1; # no space between = and value
+PERSON1=$1; # no space between = and value
 PERSON2=$2;
 
 
