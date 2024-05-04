@@ -6,6 +6,6 @@ MOVIES=("Arya" "Desamuduru" "Pushpa")
 
 
 echo " Firt movie is ${MOVIES[0]}"
-echo " second movie is $MOVIES[1]}"
+echo " second movie is ${MOVIES[1]}"
 
-echo " All movies $MOVIES[@]}"
+echo " All movies are  ${MOVIES[@]}"
