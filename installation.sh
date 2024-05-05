@@ -3,7 +3,7 @@
 
 USERID=$(id -u)
 
-if [ $uSERID -eq 0 ]
+if [ $USERID -eq 0 ]
 then 
    echo " please proceed with installation "
    dnf install mysql -y
