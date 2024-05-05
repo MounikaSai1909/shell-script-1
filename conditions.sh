@@ -2,7 +2,7 @@
 
 Num=$1
 
-if [ $Num -gt 10]
+if [ $Num -gt 10 ]
 then 
      echo " entered number $Num is greater then 10"
 else 
