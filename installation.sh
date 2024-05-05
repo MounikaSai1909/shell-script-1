@@ -13,7 +13,7 @@ else
 fi
 
 dnf install git -y
-if [ $? -ne o ]
+if [ $? -ne 0 ]
 then 
   echo "installation is a failure "
   exit 1
