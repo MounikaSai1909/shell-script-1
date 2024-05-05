@@ -9,7 +9,7 @@ then
    dnf install mysql -y
 else 
     echo " please run the script with root access"
-    exit 1 #  manually exit if error comes
+    exit 0 #  manually exit if error comes
 fi
 
 dnf install git -y
