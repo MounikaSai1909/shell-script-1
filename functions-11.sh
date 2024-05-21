@@ -9,6 +9,7 @@ echo " LOG_FILE : $LOG_FILE "
 
 COLOURS= $(echo -e "\e[31m Hello World")
 echo " COLOURS : $COLOURS "
+#
 
 VALIDATE (){
    if [ $1  -ne 0 ]
