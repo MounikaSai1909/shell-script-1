@@ -9,14 +9,14 @@ VALIDATE (){
  #   else
  #        echo "$2.. SUCCESS"
  #   fi  
-    echo " 1st argument : $1"
-    echo " 2nd argument : $2"
-    echo " 3rd argument : $3"
+    echo " 1st argument : $1 "
+    echo " 2nd argument : $2 "
+    echo " 3rd argument : $3 "
 
 }
 
 
-dnf install mysqll -y
+dnf install mysql -y
 VALIDATE $? "installing MySQL"
 
 
