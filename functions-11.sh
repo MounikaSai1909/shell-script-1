@@ -1,27 +1,28 @@
 
 #USERID=$(id -u)
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+TIMESTAMP=$(date +%F-%H-%M-%S)
+LOG_FILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
 VALIDATE (){
- #  if [ $1  -ne 0 ]
- #  then
- #    echo "$2... FAILURE "
- #      exit 1
- #   else
- #        echo "$2.. SUCCESS"
- #   fi  
-    echo " 1st argument : $1 "
-    echo " 2nd argument : $2 "
-    echo " 3rd argument : $3 "
+   if [ $1  -ne 0 ]
+   then
+       echo "$2... FAILURE "
+       exit 1
+   else
+       echo "$2.. SUCCESS"
+   fi  
+
 
 }
 
 
-dnf install mysql -y
+dnf install mysql -y &>> $LOG_FILE
 VALIDATE $? "installing MySQL"
 
 
-dnf install git -y
+dnf install git -y &>> $LOG_FILE
 VALIDATE $? "installing Git"
 
-dnf install nodejs -y
+dnf install nodejs -y &>> $LOG_FILE
 VALIDATE $? "installing nodejs"
