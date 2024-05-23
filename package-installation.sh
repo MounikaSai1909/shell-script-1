@@ -15,6 +15,15 @@ LOG_FILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
 R="\e[31m"
 G="\e[32m"
+N="\e[0m"
+
+VALIDATE(){
+    if [ $1 -ne 0 ]
+    echo -e "$2  $R installation Failure $N "
+    else 
+    echo -e "$2 $G installation SUcCESS $N "
+    fi
+}
 
 if [ $USERID -ne 0 ]
 then 
@@ -31,6 +40,8 @@ do
    then 
      echo -e " $i already installed...$G SKIPPING $N "
     else
-     echo -e  " $i not installed... $R INSTALL $N "
+     dnf install $i -y &>> $LOG_FILE
+     VALIDATE $? "installation of $i"
+
     fi
 done
