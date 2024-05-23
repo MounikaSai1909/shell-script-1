@@ -13,6 +13,8 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOG_FILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
+R="\e[31m"
+G="\e[32m"
 
 if [ $USERID -ne 0 ]
 then 
@@ -27,8 +29,8 @@ do
    yum list installed $i &>> $LOG_FILE
    if [ $? -eq 0 ]
    then 
-     echo "$i already installed... SKIPPING"
+     echo -e " $i already installed...$G SKIPPING $N "
     else
-     echo "$i not installed... INSTALL"
+     echo " $i not installed... $R INSTALL $N "
     fi
 done
