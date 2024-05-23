@@ -6,7 +6,7 @@
 # send packages to install as paramters
 #  yum list installed mysql -- to check the list of package installed in server
 
-#sudo sh package-installation.sh mysql git gcc docker
+#sudo sh package-installation.sh mysql git gcc fail2ban
 
 USERID=$(id -u)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
@@ -15,6 +15,7 @@ LOG_FILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
 R="\e[31m"
 G="\e[32m"
+Y="\e[33m"
 N="\e[0m"
 
 VALIDATE(){
@@ -22,7 +23,7 @@ VALIDATE(){
     then
      echo -e "$2  $R installation Failure $N "
     else 
-     echo -e "$2  $G installation SUcCESS $N "
+     echo -e "$2  $G installation SUCCESS $N "
     fi
 }
 
@@ -39,7 +40,7 @@ do
    yum list installed $i &>> $LOG_FILE
    if [ $? -eq 0 ]
    then 
-     echo -e " $i already installed...$G SKIPPING $N "
+     echo -e " $i already installed...$Y SKIPPING $N "
     else
      dnf install $i -y &>> $LOG_FILE
      VALIDATE $? "installation of $i"
