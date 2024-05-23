@@ -31,6 +31,6 @@ do
    then 
      echo -e " $i already installed...$G SKIPPING $N "
     else
-     echo " $i not installed... $R INSTALL $N "
+     echo -e  " $i not installed... $R INSTALL $N "
     fi
 done
