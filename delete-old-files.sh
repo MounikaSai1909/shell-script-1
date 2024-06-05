@@ -11,13 +11,13 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
-SOURCE_DIRECTORY=/tmp/app-logs
+SOURCE_DIRECTORY=/tmp/appp-logs
 
 if [ -d $SOURCE_DIRECTORY ]
 then
-   echo -e "$G $SOURCE_DIRECTORY exists $N"
+   echo -e "$G $SOURCE_DIRECTORY folder exists $N"
 else
-   echo -e "$R Please make sure $SOURCE_DIRECTORY exists $N"
+   echo -e "$R Please make sure $SOURCE_DIRECTORY folder exists $N"
    exit 1
 fi 
 ##
