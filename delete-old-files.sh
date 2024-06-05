@@ -11,7 +11,7 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
-SOURCE_DIRECTORY=/tmp/appp-logs
+SOURCE_DIRECTORY=/tmp/app-logs
 
 if [ -d $SOURCE_DIRECTORY ]
 then
@@ -21,3 +21,6 @@ else
    exit 1
 fi 
 ##
+
+FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
+echo " Files to delete : $FILES"
