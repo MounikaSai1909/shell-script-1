@@ -15,7 +15,6 @@ LOG_FILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
 R="\e[31m"
 G="\e[32m"
-Y="\e[33m"
 N="\e[0m"
 
 VALIDATE(){
@@ -40,7 +39,7 @@ do
    yum list installed $i &>> $LOG_FILE
    if [ $? -eq 0 ]
    then 
-     echo -e " $i already installed...$Y SKIPPING $N "
+     echo -e " $i already installed...$G SKIPPING $N "
     else
      dnf install $i -y &>> $LOG_FILE
      VALIDATE $? "installation of $i"

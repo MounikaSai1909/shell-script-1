@@ -24,7 +24,7 @@ fi
 
 FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
-#while IFS= read -r line (Ineternal Field Seperator )
+#while IFS= read -r line (Ineternal Field Seperator)
 #do
 #statement to execute 
 #done <<< input
