@@ -1,5 +1,3 @@
-#Monitor memory of the server
-
 #!/bin/bash
 
 DISK_USAGE=$(df -hT | grep xfs)
@@ -12,6 +10,6 @@ do
     FOLDER=$(echo $line | awk -F " " '{print $NF}')
     if [ $USAGE -ge $DISK_THRESHOLD ]
     then
-        echo "$FOLDER is more than $DISK_THRESHOLD", Current Usage : $USAGE"
+        echo "$FOLDER is more than $DISK_THRESHOLD", Current Usage : $USAGE%"
     fi
-done <<< $DISK_USAGE
+done <<< "$DISK_USAGE"
